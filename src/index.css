@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@900&family=JetBrains+Mono:wght@300;400;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #060606;
+  --sidebar-color: #080808;
+  --accent-color: #FF5500;
+  --border-color: #151515;
+  --text-primary: #FFFFFF;
+  --text-secondary: #666666;
+  --noise-opacity: 0.15;
+}
+
+@layer base {
+  body {
+    background-color: #060606;
+    color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    cursor: default;
+    font-family: 'JetBrains Mono', monospace;
+    width: 100%;
+  }
+}
+
+@layer components {
+  .noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: var(--noise-opacity);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  .brutalist-grid {
+    background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px),
+      linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  @media (min-width: 1024px) {
+    .brutalist-grid {
+      background-size: 80px 80px;
+    }
+  }
+
+  /* Custom Professional Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #FF5500;
+  }
+
+  /* Professional Prose Overhaul - Mobile Optimized */
+  .prose-elite {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite {
+      gap: 4rem;
+    }
+  }
+
+  .prose-elite .title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-style: italic;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite .title {
+      gap: 1.5rem;
+      font-size: 2.25rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .prose-elite .title::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    min-width: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .prose-elite .sub-title {
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: #FF5500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite .sub-title {
+      font-size: 0.875rem;
+      letter-spacing: 0.4em;
+      margin-top: 5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .prose-elite p {
+    font-size: 1rem;
+    color: #888888;
+    line-height: 1.8;
+    max-width: 100%;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite p {
+      font-size: 1.125rem;
+      line-height: 2.2;
+      max-width: 48rem;
+    }
+  }
+
+  .prose-elite strong {
+    color: #FFFFFF;
+    font-weight: 800;
+  }
+
+  .prose-elite .grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 3rem;
+    }
+  }
+
+  .prose-elite .card {
+    padding: 2rem;
+    background-color: #000000;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite .card {
+      padding: 3rem;
+    }
+  }
+
+  .prose-elite .card:hover {
+    background-color: #0a0a0a;
+    transform: translateY(-2px);
+  }
+
+  .prose-elite .card h5 {
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite .card h5 {
+      font-size: 0.875rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  .prose-elite .card p {
+    font-size: 0.7rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite .card p {
+      font-size: 0.75rem;
+      line-height: 1.8;
+    }
+  }
+
+  .prose-elite pre {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    background-color: #030303;
+    padding: 1.5rem;
+    overflow-x: auto;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: #999999;
+    font-weight: 300;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite pre {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      padding: 2.5rem;
+      font-size: 0.9375rem;
+      line-height: 1.8;
+    }
+  }
+
+  .prose-elite .code-header {
+    background-color: #0a0a0a;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: none;
+    font-size: 0.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #444444;
+    display: inline-block;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite .code-header {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.625rem;
+      letter-spacing: 0.3em;
+    }
+  }
+
+  .prose-elite code {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 0.1rem 0.3rem;
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 700;
+    word-break: break-all;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite code {
+      padding: 0.2rem 0.5rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  .prose-elite pre code {
+    background-color: transparent;
+    padding: 0;
+    font-size: 0.8125rem;
+    word-break: normal;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite pre code {
+      font-size: 0.9375rem;
+    }
+  }
+
+  .prose-elite .alert {
+    padding: 1.5rem;
+    border-left-width: 2px;
+    background-color: rgba(255, 255, 255, 0.01);
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite .alert {
+      padding: 2.5rem;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .prose-elite .alert.warn {
+    border-color: #FF5500;
+  }
+
+  .prose-elite .alert strong {
+    font-size: 0.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #FF5500;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .prose-elite .alert strong {
+      font-size: 0.625rem;
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+/* Scrollbar Elite */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FF5500;
+}
