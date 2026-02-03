@@ -2,285 +2,202 @@ import { Terminal, Cpu, Zap, Code, Book, MessageSquare, Box, Shield, Database, A
 
 export const CATEGORIES = [
     {
-        id: 'setup',
-        label: 'PERSIAPAN_SISTEM',
+        id: 'start',
+        label: 'PERSIAPAN_MENTAL_ALAT',
         items: [
-            { id: 'install', title: 'INSTALASI_CORE', subtitle: 'Compiler & Tooling', icon: 'Terminal', difficulty: 'Beginner' },
-            { id: 'structure', title: 'ARSITEKTUR_FOLDER', subtitle: 'Workspace & Config', icon: 'Layers', difficulty: 'Beginner' },
+            { id: 'install', title: '01. PERALATAN_PERANG', subtitle: 'Setup & Tools', icon: 'Terminal', difficulty: 'Beginner' },
+            { id: 'logic_analog', title: '02. ANALOGI_CODING', subtitle: 'Pola Pikir Komputer', icon: 'Zap', difficulty: 'Beginner' },
+            { id: 'syntax_deep', title: '03. ANATOMI_SCRIPT', subtitle: 'Simbol & Aturan', icon: 'Cpu', difficulty: 'Beginner' },
+            { id: 'clean_code', title: '04. SENI_KERAPIHAN', subtitle: 'Indentasi & Gaya', icon: 'Layers', difficulty: 'Beginner' },
         ]
     },
     {
-        id: 'language',
-        label: 'FUNDAMENTAL_PAWN',
+        id: 'basics',
+        label: 'FUNDAMENTAL_PAWN_DASAR',
         items: [
-            { id: 'syntax', title: 'SINTAKS_DASAR', subtitle: 'Cell-Based Logic', icon: 'Cpu', difficulty: 'Intermediate' },
-            { id: 'variables', title: 'MANAJEMEN_MEMORI', subtitle: 'Variabel & Scope', icon: 'Database', difficulty: 'Intermediate' },
-            { id: 'logic', title: 'ALUR_LOGIKA', subtitle: 'Percabangan & Loop', icon: 'Zap', difficulty: 'Intermediate' },
+            { id: 'variables_ultra', title: '05. KOTAK_AJAIB', subtitle: 'Variabel & Wadah', icon: 'Database', difficulty: 'Beginner' },
+            { id: 'constants', title: '06. KATA_KUNCI_TETAP', subtitle: 'Konstanta & Macro', icon: 'Shield', difficulty: 'Beginner' },
+            { id: 'formatting', title: '07. SENI_BERBICARA', subtitle: 'Format & Teks', icon: 'MessageSquare', difficulty: 'Intermediate' },
+            { id: 'playerid_concept', title: '08. NOMOR_ANTRIAN', subtitle: 'Konsep PlayerID', icon: 'User', difficulty: 'Beginner' },
         ]
     },
     {
-        id: 'advanced',
-        label: 'PENGEMBANGAN_LANJUT',
+        id: 'logic_data',
+        label: 'STRUKTUR_LOGIKA_DATA',
         items: [
-            { id: 'functions', title: 'PROSEDUR_SISTEM', subtitle: 'Public & Stock', icon: 'Code', difficulty: 'Advanced' },
-            { id: 'callbacks', title: 'EVENT_PIPELINE', subtitle: 'Hooking Callbacks', icon: 'Activity', difficulty: 'Advanced' },
-            { id: 'mysql', title: 'DATABASE_ENGINE', subtitle: 'MySQL R41-4', icon: 'Database', difficulty: 'Expert' },
-            { id: 'security', title: 'KEAMANAN_DATA', subtitle: 'Anti-Cheat Logic', icon: 'Shield', difficulty: 'Expert' },
+            { id: 'control_flow', title: '09. PENGAMBIL_KEPUTUSAN', subtitle: 'If, Else, Switches', icon: 'Zap', difficulty: 'Intermediate' },
+            { id: 'enum_data', title: '10. RAK_DATA_MODULAR', subtitle: 'Enumerasi (Enum)', icon: 'Layers', difficulty: 'Intermediate' },
+            { id: 'functions_easy', title: '11. MESIN_OTOMATIS', subtitle: 'Stock & Public', icon: 'Code', difficulty: 'Intermediate' },
         ]
     },
     {
-        id: 'api_ref',
-        label: 'MODUL_API_SAMP',
+        id: 'samp_systems',
+        label: 'INTEGRASI_SERVER_SAMP',
         items: [
-            { id: 'player_api', title: 'KONTROL_PEMAIN', subtitle: 'State & Position', icon: 'User', difficulty: 'Beginner' },
-            { id: 'gui', title: 'ANTARMUKA_GRAFIS', subtitle: 'Dialog & Textdraw', icon: 'MessageSquare', difficulty: 'Advanced' },
-            { id: 'world', title: 'ENTITAS_DUNIA', subtitle: 'Object & Vehicle', icon: 'Box', difficulty: 'Intermediate' },
+            { id: 'callbacks_master', title: '12. DETEKSI_KEJADIAN', subtitle: 'System Callbacks', icon: 'Activity', difficulty: 'Advanced' },
+            { id: 'gui_step', title: '13. JENDELA_INTERAKSI', subtitle: 'Dialog & Textdraws', icon: 'Box', difficulty: 'Advanced' },
+            { id: 'mysql_beginner', title: '14. CATATAN_ABADI', subtitle: 'Simpan Data (MySQL)', icon: 'Database', difficulty: 'Expert' },
         ]
     }
 ];
 
 export const CONTENT = {
     'install': {
-        title: 'INSTALASI_CORE',
-        meta: { sektor: 'Setup', status: 'Optimal', version: '0.3.7-R5' },
+        title: 'PERALATAN_PERANG',
+        meta: { level: 'Prakondisi', durasi: '15m', fokus: 'Tooling' },
         body: `
-            <h3 class="title">KONFIGURASI_DEVELOPER_WORKSPACE</h3>
-            <p>Untuk memulai pengembangan SA-MP yang profesional, Anda tidak bisa hanya mengandalkan notepad biasa. Anda membutuhkan ekosistem yang mendukung kompilasi file <code>.pwn</code> menjadi <code>.amx</code> secara efisien.</p>
-            
+            <h3 class="title">MENYIAPKAN_MEDAN_TEMPUR</h3>
+            <p>Coding itu seperti memasak. Jika pisau Anda tumpul, Anda akan susah memotong daging. Jika compiler Anda salah konfig, Anda akan kesusahan membuat script.</p>
             <div class="grid">
                 <div class="card">
                     <h5>Pawno Compiler</h5>
-                    <p>Editor legendaris yang disertakan dalam paket server. Pastikan Anda menjalankan <code>pawno.exe</code> sebagai Administrator untuk menghindari error 'Unable to execute compiler'.</p>
+                    <p>Wajib dijalankan dari folder <code>pawno/pawno.exe</code>. Aplikasi ini adalah penerjemah bahasa manusia ke bahasa mesin (AMX).</p>
                 </div>
                 <div class="card">
-                    <h5>VS Code Integration</h5>
-                    <p>Sangat disarankan bagi murid tingkat lanjut. Gunakan ekstensi <strong>Pawn Community</strong> untuk fitur <em>IntelliSense</em>, <em>Hover Docs</em>, dan <em>Smart Indentation</em>.</p>
+                    <h5>Include Kamus</h5>
+                    <p>Pawn tidak tahu apa itu Kesehatan Pemain sebelum ia membaca kamus <code>a_samp.inc</code>. Selalu masukkan ini di baris pertama!</p>
                 </div>
             </div>
-            
-            <h4 class="sub-title">COMPILER_DIRECTIVES</h4>
-            <p>Parameter compiler menentukan bagaimana script Anda diproses. Flag <code>-d3</code> wajib digunakan saat development untuk mendeteksi lokasi crash via <em>crashdetect</em>.</p>
+            <h4 class="sub-title">KESALAHAN_PEMULA_01</h4>
+            <p>Banyak pemula mencoba membuat script di desktop. JANGAN! Pawno harus tetap berada di satu folder dengan include-nya agar ia tidak buta.</p>
         `
     },
-    'structure': {
-        title: 'ARSITEKTUR_FOLDER',
-        meta: { sektor: 'Infrastructure', status: 'Required', type: 'Static' },
+    'logic_analog': {
+        title: 'ANALOGI_CODING',
+        meta: { level: 'Psikologi', durasi: '10m', fokus: 'Mindset' },
         body: `
-            <h3 class="title">FOLDER_HIERARCHY_EXPLAINED</h3>
-            <p>Struktur folder SA-MP Server bersifat statis. Memahami fungsi setiap sub-folder akan mempermudah manajemen resource server Anda.</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h5>/gamemodes</h5>
-                    <p>Tempat script utama berada. File <code>.pwn</code> adalah source-code, sedangkan <code>.amx</code> adalah file biner yang dibaca oleh server.</p>
-                </div>
-                <div class="card">
-                    <h5>/filterscripts</h5>
-                    <p>Script modular yang berjalan berdampingan dengan gamemode. Cocok untuk fitur mandiri seperti sistem admin atau objek statis.</p>
-                </div>
-            </div>
-            
-            <h4 class="sub-title">INCLUDE_DIRECTORY</h4>
-            <p>Folder <code>pawno/include</code> berisi library (*.inc) yang mendefinisikan fungsi-fungsi native. Pastikan file <code>a_samp.inc</code> selalu up-to-date untuk mendukung fungsionalitas terbaru.</p>
-        `
-    },
-    'syntax': {
-        title: 'SINTAKS_DASAR',
-        meta: { sektor: 'Core', status: 'Stable', type: 'Cell-Based' },
-        body: `
-            <h3 class="title">PAWN_CELL_DATA_SYSTEM</h3>
-            <p>Pawn adalah bahasa <strong>Weakly Typed</strong> yang berbasis "Cell" (32-bit). Berbeda dengan C++ atau Java, setiap data di Pawn secara fisik adalah cell berukuran 4 bytes.</p>
-            
-            <div class="code-header">BASIC_SYNTAX_SPEC</div>
-            <pre><code>// Sintaks komentar satu baris
-/* Komentar multi baris */
-
-#if defined MAX_PLAYERS
-    #undef MAX_PLAYERS
-#endif
-#define MAX_PLAYERS 500 // Pre-processor directive</code></pre>
-
-            <h4 class="sub-title">SENSITIVITAS_KARAKTER</h4>
-            <p>Ingat: Pawn bersifat <strong>Case Sensitive</strong>. Fungsi <code>SendClientMessage</code> berbeda dengan <code>sendclientmessage</code>. Kesalahan penulisan satu huruf akan menyebabkan <em>Error 017: Undefined Symbol</em>.</p>
-        `
-    },
-    'variables': {
-        title: 'MANAJEMEN_MEMORI',
-        meta: { sektor: 'Memory', status: 'Critical', type: 'Alloc' },
-        body: `
-            <h3 class="title">VARIABLE_SCOPING_ALLOCATION</h3>
-            <p>Manajemen variabel di Pawn sangat krusial untuk mencegah kebocoran memori (memory leak) dan penggunaan stack yang berlebihan.</p>
-            
-            <pre><code>new iPoint; // Global Variable (jika di luar function)
-static sValue; // Variabel yang nilainya tetap tersimpan namun scope terbatas
-new szString[128]; // Array allocation</code></pre>
-
-            <h4 class="sub-title">STRING_HANDLING</h4>
-            <p>Pawn tidak memiliki tipe data <em>string</em> asli. String adalah array dari cell. Pastikan selalu memberikan terminator <code>\\0</code> pada akhir teks.</p>
+            <h3 class="title">BAGAIMANA_KOMPUTER_MEMBACA</h3>
+            <p>Murid harus paham bahwa komputer membaca script kita seperti kita membaca koran: Dari Atas ke Bawah, Baris demi Baris.</p>
             <div class="alert warn">
-                <strong>PENTING:</strong> Alokasi string yang terlalu besar di dalam function (Stack) dapat menyebabkan <em>Stack Overflow</em>. Gunakan <code>static</code> untuk buffer besar.
+              <strong>LOGIKA URUTAN:</strong><br/>
+              Jika Anda menulis "Nyalakan Mesin" di baris 5, lalu "Masukkan Kunci" di baris 10, mesin tidak akan pernah menyala. Urutan adalah SEGALANYA.
             </div>
+            <h4 class="sub-title">INPUT_PROSES_OUTPUT</h4>
+            <p>Setiap program mengikuti pola ini: Seseorang memicu sesuatu (Input), komputer menghitung (Proses), dan hasilnya muncul (Output).</p>
         `
     },
-    'logic': {
-        title: 'ALUR_LOGIKA',
-        meta: { sektor: 'Logic', status: 'Active', type: 'Flow' },
+    'syntax_deep': {
+        title: 'ANATOMI_SCRIPT',
+        meta: { level: 'Linguistik', durasi: '20m', fokus: 'Syntax' },
         body: `
-            <h3 class="title">CONDITIONAL_PROCESS_FLOW</h3>
-            <p>Alur logika menentukan kecerdasan server Anda dalam memproses perintah dan event.</p>
-            
-            <div class="code-header">LOGIC_OPERATORS</div>
-            <pre><code>if(PlayerLevel[playerid] >= 10 && !IsPlayerInAnyVehicle(playerid)) {
-    // Logika jika pemain level 10+ dan tidak di kendaraan
-} else if (IsPlayerAdmin(playerid)) {
-    // Logika alternatif untuk admin
-}</code></pre>
-
-            <h4 class="sub-title">LOOPS_OPTIMIZATION</h4>
-            <p>Hindari perulangan <code>MAX_PLAYERS</code> tanpa pengecekan koneksi. Gunakan library <em>foreach</em> (YSI) untuk performa yang jauh lebih ringan.</p>
-            <pre><code>for(new i = 0; i < MAX_PLAYERS; i++) {
-    if(IsPlayerConnected(i)) {
-        // Hanya proses pemain yang online
-    }
+            <h3 class="title">SIMBOL_DAN_MAKNA_TERSEMBUNYI</h3>
+            <p>Belajar Pawn itu seperti belajar bahasa asing. Tanda baca bukan hiasan, melainkan instruksi keras.</p>
+            <ul class="space-y-6 text-sm text-neutral-500">
+                <li><strong class="text-orange-600">Kurung Kurawal { }</strong> : Menandakan Awal dan Akhir kode.</li>
+                <li><strong class="text-orange-600">Titik Koma ;</strong> : Menandakan akhir satu instruksi.</li>
+                <li><strong class="text-orange-600">Kurung Biasa ( )</strong> : Tempat menaruh informasi.</li>
+            </ul>
+        `
+    },
+    'clean_code': {
+        title: 'SENI_KERAPIHAN',
+        meta: { level: 'Etika', durasi: '15m', fokus: 'Indentation' },
+        body: `
+            <h3 class="title">PENTINGNYA_INDENTASI</h3>
+            <p>Script yang berantakan adalah script yang sulit diperbaiki. Gunakan tombol TAB untuk merapikan kode.</p>
+            <div class="code-header">CONTOH_RAPI</div>
+            <pre><code>if(x == 5)
+{
+    SendClientMessage(playerid, -1, "Halo");
 }</code></pre>
         `
     },
-    'functions': {
-        title: 'PROSEDUR_SISTEM',
-        meta: { sektor: 'Modular', status: 'Ready', type: 'Function' },
+    'variables_ultra': {
+        title: 'KOTAK_AJAIB',
+        meta: { level: 'Fundamental', durasi: '25m', fokus: 'Storage' },
         body: `
-            <h3 class="title">DEFINISI_DAN_EKSEKUSI_FUNGSI</h3>
-            <p>Fungsi modular memungkinkan Anda menulis kode sekali dan menggunakannya berkali-kali.</p>
-            
+            <h3 class="title">TEMPAT_PENYIMPANAN_DATA</h3>
+            <p>Variabel adalah sebuah nama yang kita berikan pada sepotong memori. Bayangkan sebuah kotak dengan label.</p>
             <div class="grid">
                 <div class="card">
-                    <h5>Stock Functions</h5>
-                    <p>Fungsi pembantu yang hanya akan dicompile jika dipanggil. Sangat efisien untuk library internal.</p>
+                    <h5>Integer (Angka)</h5>
+                    <code>new Uang = 100;</code>
                 </div>
                 <div class="card">
-                    <h5>Public Functions</h5>
-                    <p>Wajib didefinisikan dengan <code>forward</code>. Digunakan untuk Timer dan Callbacks agar bisa diakses oleh server core.</p>
+                    <h5>Float (Desimal)</h5>
+                    <code>new Float:Posisi = 5.5;</code>
                 </div>
             </div>
-            
-            <pre><code>forward OnPlayerLoginComplete(playerid);
-public OnPlayerLoginComplete(playerid) {
-    // Logika setelah login sukses
-    return 1;
-}
-
-stock GiveExperience(playerid, amount) {
-    PlayerLevel[playerid] += amount;
-}</code></pre>
         `
     },
-    'callbacks': {
-        title: 'EVENT_PIPELINE',
-        meta: { sektor: 'Event', status: 'Hooking', type: 'Callback' },
+    'constants': {
+        title: 'KATA_KUNCI_TETAP',
+        meta: { level: 'Strategi', durasi: '10m', fokus: 'Macros' },
         body: `
-            <h3 class="title">HOOKING_SYSTEM_EVENTS</h3>
-            <p>Callback adalah fungsi yang otomatis dipanggil oleh server saat suatu kejadian terjadi.</p>
-            
-            <div class="code-header">ESSENTIAL_CALLBACKS</div>
-            <pre><code>public OnGameModeInit() {
-    // Dipanggil saat gamemode pertama kali dijalankan
-    return 1;
-}
-
-public OnPlayerConnect(playerid) {
-    // Dipanggil setiap kali pemain masuk ke server
-    printf("Player ID %d has joined.", playerid);
-    return 1;
-}</code></pre>
-
-            <h4 class="sub-title">RETURN_VALUES_MATTER</h4>
-            <p>Nilai return (1 atau 0) pada callback sangat krusial. Pada <code>OnPlayerCommandText</code>, return 0 berarti perintah tersebut 'tidak ditemukan' dan akan diteruskan ke script lain.</p>
+            <h3 class="title">MEMUDAHKAN_PEMBACAAN_KODE</h3>
+            <p>Gunakan julukan untuk angka-angka sulit seperti warna.</p>
+            <pre><code>#define WARNA_MERAH 0xFF0000FF
+SendClientMessage(playerid, WARNA_MERAH, "Hanya untuk Admin!");</code></pre>
         `
     },
-    'mysql': {
-        title: 'DATABASE_ENGINE',
-        meta: { sektor: 'Database', status: 'Secure', version: 'R41-4' },
+    'formatting': {
+        title: 'SENI_BERBICARA',
+        meta: { level: 'Menengah', durasi: '30m', fokus: 'Strings' },
         body: `
-            <h3 class="title">PENGELOLAAN_DATA_RELASIONAL</h3>
-            <p>Gunakan MySQL R41-4 untuk sistem penyimpanan data yang modern, cepat, dan aman.</p>
-            
-            <pre><code>// Inisialisasi Koneksi
-new MySQL:dbHandle = mysql_connect("localhost", "root", "", "samp_db");
-
-// Query Asinkron (Tidak menyebabkan server lag)
-mysql_tquery(dbHandle, "SELECT * FROM users", "OnUsersLoad");</code></pre>
-
-            <h4 class="sub-title">SECURITY_INJECTION_PREVENTION</h4>
-            <p>Gunakan <code>mysql_format</code> dengan penentu <code>%e</code> untuk melakukan escaping otomatis pada input user guna mencegah SQL Injection.</p>
+            <h3 class="title">TEKS_DAN_VARIABEL</h3>
+            <p>Gunakan fungsi format untuk menggabungkan teks dan data pemain.</p>
+            <pre><code>new szBuffer[128];
+format(szBuffer, sizeof(szBuffer), "Uangmu: $%d", Uang);
+SendClientMessage(playerid, -1, szBuffer);</code></pre>
         `
     },
-    'security': {
-        title: 'KEAMANAN_DATA',
-        meta: { sektor: 'Security', status: 'Hardened', level: 'Expert' },
+    'playerid_concept': {
+        title: 'NOMOR_ANTRIAN',
+        meta: { level: 'Konsep', durasi: '20m', fokus: 'Logic' },
         body: `
-            <h3 class="title">SERVER_SIDE_VALIDATION</h3>
-            <p>Prinsip utama: <strong>Client is a liar.</strong> Semua data yang dikirim client harus divalidasi ulang di sisi server.</p>
-            
-            <div class="alert warn">
-                <strong>WARNING:</strong> Jangan pernah memercayai variabel <code>health</code> atau <code>posisi</code> yang dikirim client tanpa mengecek logikanya di server.
-            </div>
-
-            <h4 class="sub-title">ANTI_CHEAT_METHODS</h4>
-            <p>Simpan koordinat terakhir pemain di variabel server-side. Jika koordinat baru terlalu jauh dalam waktu singkat, kemungkinan besar pemain melakukan teleport hack.</p>
+            <h3 class="title">KONSEP_PLAYER_ID</h3>
+            <p>Setiap pemain memiliki nomor unik dari 0 sampai 999 sebagai identitas di server.</p>
         `
     },
-    'player_api': {
-        title: 'KONTROL_PEMAIN',
-        meta: { sektor: 'API', status: 'Ready', target: 'Player' },
+    'control_flow': {
+        title: 'PENGAMBIL_KEPUTUSAN',
+        meta: { level: 'Logika', durasi: '40m', fokus: 'Branching' },
         body: `
-            <h3 class="title">MANIPULASI_STATE_PEMAIN</h3>
-            <p>Fungsi-fungsi dasar untuk mengontrol apa yang dialami pemain di dalam server.</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h5>SetPlayerPos</h5>
-                    <p>Mengatur lokasi pemain (X, Y, Z). Pastikan memberika delay tipis saat memindahkan pemain antar interior.</p>
-                </div>
-                <div class="card">
-                    <h5>GivePlayerMoney</h5>
-                    <p>Memberikan uang ke pemain. Selalu sinkronkan dengan variabel server-side agar tidak bisa di-cheat.</p>
-                </div>
-            </div>
-            
-            <pre><code>SetPlayerPos(playerid, 1200.0, -1500.0, 15.0);
-SetPlayerFacingAngle(playerid, 90.0);
-SetCameraBehindPlayer(playerid);</code></pre>
+            <h3 class="title">IF_DAN_ELSE_SWITCH</h3>
+            <p>Memungkinkan server memilih tindakan berdasarkan kondisi tertentu.</p>
+            <pre><code>if(IsPlayerAdmin(playerid)) { }</code></pre>
         `
     },
-    'gui': {
-        title: 'ANTARMUKA_GRAFIS',
-        meta: { sektor: 'UI', status: 'Enhanced', type: 'Dialog' },
+    'enum_data': {
+        title: 'RAK_DATA_MODULAR',
+        meta: { level: 'Struktur', durasi: '35m', fokus: 'Arrays' },
         body: `
-            <h3 class="title">PENGEMBANGAN_USER_INTERFACE</h3>
-            <p>Gunakan Dialog dan Textdraw untuk memberikan antarmuka interaktif kepada pemain.</p>
-            
-            <div class="code-header">DIALOG_SYSTEM</div>
-            <pre><code>ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "LOGIN SANKSI", "Masukkan password Anda:", "Login", "Keluar");</code></pre>
-
-            <h4 class="sub-title">TEXTDRAW_OPTIMIZATION</h4>
-            <p>Gunakan <em>Player-Textdraws</em> untuk UI yang bersifat individual (seperti bar HP atau Logo Nama) guna menghemat limit global textdraw (2048).</p>
+            <h3 class="title">STRUKTUR_DATA_PEMAIN</h3>
+            <p>Gunakan Enum untuk merapikan banyak data pemain dalam satu variabel tunggal.</p>
+            <pre><code>enum pInfo { pMoney, pLevel }
+new PlayerData[MAX_PLAYERS][pInfo];</code></pre>
         `
     },
-    'world': {
-        title: 'ENTITAS_DUNIA',
-        meta: { sektor: 'World', status: 'Ready', type: 'Static/Dynamic' },
+    'functions_easy': {
+        title: 'MESIN_OTOMATIS',
+        meta: { level: 'Modular', durasi: '25m', fokus: 'Workflow' },
         body: `
-            <h3 class="title">PENGELOLAAN_OBJEK_DAN_KENDARAAN</h3>
-            <p>Dunia SA-MP diisi oleh objek, kendaraan, dan pickup yang harus dikelola dengan benar agar tidak terjadi lag visual.</p>
-            
-            <pre><code>// Membuat kendaraan di server init
-CreateVehicle(411, 0.0, 0.0, 3.0, 0.0, 1, 1, 60);
-
-// Membuat objek statis
-CreateObject(1337, 100.0, 100.0, 5.0, 0.0, 0.0, 0.0);</code></pre>
-
-            <h4 class="sub-title">DYNAMIC_STREAMER</h4>
-            <p>Sangat disarankan menggunakan plugin <strong>Streamer by Incognito</strong> untuk mengelola ribuan objek tanpa terkena limit native SA-MP (1000 objek).</p>
+            <h3 class="title">STOCK_DAN_PUBLIC</h3>
+            <p>Memecah kode menjadi fungsi-fungsi kecil agar bisa digunakan berulang kali.</p>
+        `
+    },
+    'callbacks_master': {
+        title: 'DETEKSI_KEJADIAN',
+        meta: { level: 'Integrasi', durasi: '30m', fokus: 'Events' },
+        body: `
+            <h3 class="title">CALLBACKS_DALAM_SAMP</h3>
+            <p>Kejadian otomatis seperti pemain mati (OnPlayerDeath) atau chat (OnPlayerText).</p>
+        `
+    },
+    'gui_step': {
+        title: 'JENDELA_INTERAKSI',
+        meta: { level: 'Visual', durasi: '20m', fokus: 'UI' },
+        body: `
+            <h3 class="title">DIALOG_DAN_TEXTDRAW</h3>
+            <p>Antarmuka visual agar pemain bisa memilih menu secara langsung.</p>
+        `
+    },
+    'mysql_beginner': {
+        title: 'CATATAN_ABADI',
+        meta: { level: 'Expert', durasi: '60m', fokus: 'Database' },
+        body: `
+            <h3 class="title">DATABASE_MYSQL</h3>
+            <p>Cara menyimpan progres pemain secara permanen ke dalam tabel database.</p>
         `
     }
 };
